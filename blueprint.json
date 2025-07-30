@@ -1,0 +1,12 @@
+{
+  "name": "referendum",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "blueprint test"
+  },
+  "contracts": {
+    "referendum": {
+      "path": "./contracts/referendum.fc"
+    }
+  }
+}
