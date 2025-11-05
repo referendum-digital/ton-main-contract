@@ -29,11 +29,16 @@ int get_last_id() method_id {
     return last_id;
 }
 
-cell get_votes_hash(int id) method_id {
+cell get_cell_by_id(int id) method_id {
     (_, cell votes_dict) = load_data();
     (cell value, int found?) = votes_dict.udict_get_ref?(64, id);
     throw_unless(404, found?);
     return value;
+}
+
+slice get_cell_by_id(int id) method_id {
+    cell cell_value = get_cell_by_id(id);
+    return cell_value.begin_parse();
 }
 
 () recv_internal(int my_balance, int msg_value, cell in_msg_full, slice in_msg_body) impure {
