@@ -36,7 +36,7 @@ cell get_cell_by_id(int id) method_id {
     return value;
 }
 
-slice get_cell_by_id(int id) method_id {
+ slice get_cell_slice_by_id(int id) method_id {
     cell cell_value = get_cell_by_id(id);
     return cell_value.begin_parse();
 }
